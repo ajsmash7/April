@@ -34,14 +34,17 @@
           //use a for loop to check the user ID characters
           for(let i=0; i<idCheck.length; i++) {
             var character = idCheck.charAt(i);
-            //if the character is capitalized, set value to true, otherwise, set lowercase value to true
-            if (character == character.toUppercase()) {
-              idCapital = 1;
+            //if the character is not a number check if it is capitalized, if so set value to true
+            // if it is not a number set lowercase value to true
+            //if it is a number, set number value to true
+            if (isNaN(parseInt(character))) {
+              if (character == character.toUppercase()) {
+                idCapital = 1;
+              } else {
+                idLower = 1;
+              }
             } else {
-              idLower = 1;
-            }
             //use parseInt to check if the character is Not a Number, if NaN is false, set value to true
-            if (!isNaN(parseInt(character))) {
               idNumber = 1;
             }
           }
@@ -53,6 +56,7 @@
           } else {
             alert("User ID must contain at least one Uppercase letter, Lowercase letter, and one number")
           }
+
         //if userID length is not correct, alert the user to try again
         } else {
           alert("user ID needs to be between 8 and 12 characters. Please re-enter user ID")
