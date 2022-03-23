@@ -7,7 +7,7 @@
   <body>
 
     <div class="container">
-      <form action="/action_page.php" id="form1" onsubmit="return dateDiff()">
+      <form id="form1" onsubmit="return dateDiff()">
         <div class="field">
           First Name: <input type="text" id= "fname" name="fname" placeholder="First Name">
           <p id="fnameD"></p>
